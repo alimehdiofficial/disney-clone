@@ -15,7 +15,8 @@ function Nav() {
     <nav className="fixed top-0 left-0 right-0 h-[70px] bg-[#090b13] flex justify-between items-center px-9 tracking-[16px] z-10">
       <div
         className="w-20 mt-1 max-h-[70px] cursor-pointer"
-        onClick={() => router.push("/", "", { scroll: false })}
+        // onClick={() => router.replace("/", "", { scroll: false })}
+        onClick={() => router.back()}
       >
         <Image
           src="https://raw.githubusercontent.com/CleverProgrammers/cp-disney-plus-clone/8d8e67a6e4069a67b43dd9031faac3c4d5dc77e0/public/images/logo.svg"

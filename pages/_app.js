@@ -1,11 +1,16 @@
 import Nav from "../components/Nav";
+import { auth } from "../firebase";
 import "../styles/globals.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import Login from "./login";
 
 function MyApp({ Component, pageProps }) {
+  const [user, loading] = useAuthState(auth);
+
   return (
     <>
       <Nav />
-      <Component {...pageProps} />
+      {!user ? <Login /> : <Component {...pageProps} />}
     </>
   );
 }

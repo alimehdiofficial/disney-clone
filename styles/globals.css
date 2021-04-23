@@ -20,4 +20,85 @@
   .nav-link {
     @apply text-sm tracking-widest py-[2px] whitespace-nowrap relative before:bg-[#f9f9f9] before:rounded-b-[4px] before:-bottom-1.5 before:empty-content before:h-[2px] before:opacity-0 before:absolute before:right-0 before:transform before:origin-left before:origin-center before:scale-x-0 before:transition-all before:duration-[250ms] before:ease-in-out before:invisible before:w-auto before:left-0 group-hover:before:scale-100 group-hover:before:visible group-hover:before:opacity-100;
   }
+
+  .min-height-calc {
+    min-height: calc(100vh - 250px);
+  }
+
+  .padding-calc {
+    padding: 0 calc(3.5vw + 5px);
+  }
+
+  .viewers-image-wrapper {
+    @apply pt-[56.25%] rounded-[10px] shadow-3xl cursor-pointer overflow-hidden relative transition-all duration-[250ms] border-[3px] border-[#f9f9f9] border-opacity-10 hover:shadow-4xl transform hover:scale-105 hover:border-opacity-80;
+  }
+
+  .viewers-image {
+    @apply inset-0 block h-full object-cover opacity-100 absolute transition duration-500 ease-in-out w-full z-10 top-0;
+  }
+
+  .viewers-video {
+    @apply w-full h-full absolute top-0 opacity-0 z-0 group-hover:opacity-100;
+  }
+
+  .thumbnail-image-wrapper {
+    @apply pt-[56.25%] rounded-[10px] shadow-3xl cursor-pointer overflow-hidden relative transition-all duration-[250ms] border-[3px] border-[#f9f9f9] border-opacity-10 hover:shadow-4xl transform hover:scale-105 hover:border-opacity-80;
+  }
+
+  .thumbnail-image {
+    @apply inset-0 block h-full object-cover opacity-100 absolute transition duration-500 ease-in-out w-full z-10 top-0;
+  }
+
+  .player-button,
+  .trailer-button {
+    @apply text-xs md:text-[15px] mr-[10px] md:mr-[22px] px-[22px] md:px-6 h-11 md:h-14 rounded flex items-center cursor-pointer justify-center tracking-widest text-center uppercase hover:bg-[#c6c6c6];
+  }
+
+  .player-button {
+    @apply bg-[#f9f9f9] text-black;
+  }
+
+  .trailer-button {
+    @apply bg-black bg-opacity-30 border border-[#f9f9f9] text-[#f9f9f9];
+  }
+
+  .carousel {
+    @apply mt-5;
+  }
+
+  .carousel > button {
+    @apply opacity-0 h-full w-[5vw] z-10 hover:opacity-100 transition duration-200;
+  }
+
+  .carousel ul li button {
+    @apply before:text-[10px] before:text-[#969eab];
+  }
+
+  .carousel li.slick-active button {
+    @apply before:text-white !important;
+  }
+
+  .carousel .slick-list {
+    overflow: initial;
+  }
+
+  .carousel .slick-prev {
+    @apply left-[-75px];
+  }
+
+  .carousel .slick-next {
+    @apply right-[-75px];
+  }
+
+  .slider-image-wrapper {
+    @apply rounded cursor-pointer relative;
+  }
+
+  .slider-image-wrapper a {
+    @apply rounded shadow-3xl cursor-pointer block relative p-1 hover:p-0 hover:border-4 hover:border-opacity-80 duration-300;
+  }
+
+  .slider-image {
+    @apply w-full h-full;
+  }
 }

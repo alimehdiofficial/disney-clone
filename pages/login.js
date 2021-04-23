@@ -38,5 +38,3 @@ function Login() {
 }
 
 export default Login;
-
-// mb-[2vw] max-w-[650px] flex-wrap flex flex-col justify-center mt-0 items-center text-center mx-auto transition ease-out duration-200 w-full

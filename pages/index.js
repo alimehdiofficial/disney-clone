@@ -1,14 +1,47 @@
 import Head from "next/head";
+import { useAuthState } from "react-firebase-hooks/auth";
+import ImageSlider from "../components/ImageSlider";
+import NewDisney from "../components/NewDisney";
+import Originals from "../components/Originals";
+import Recommends from "../components/Recommends";
+import TopRated from "../components/TopRated";
+import Trending from "../components/Trending";
+import Viewers from "../components/Viewers";
+import { auth } from "../firebase";
+import requests, { API_KEY } from "../utils/requests";
 
-export default function Home() {
+export default function Home({ trendingResults, topRatedResults }) {
+  const [user, loading] = useAuthState(auth);
+  console.log(requests.fetchTopRated.url);
+
   return (
-    <div>
+    <main className="relative min-height-calc overflow-x-hidden block top-[72px] padding-calc after:bg-home-background after:bg-center after:bg-cover after:bg-no-repeat after:bg-fixed after:empty-content after:absolute after:inset-0 after:opacity-100 after:z-[-1]">
       <Head>
         <title>Disney</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="">Disney</h1>
-    </div>
+      <ImageSlider />
+      <Viewers />
+      <Trending trendingResults={trendingResults} />
+      <TopRated topRatedResults={topRatedResults} />
+    </main>
   );
+}
+
+export async function getServerSideProps(context) {
+  const trendingResults = await fetch(
+    `https://api.themoviedb.org/3${requests.fetchTrending.url}`
+  ).then((res) => res.json());
+
+  const topRatedResults = await fetch(
+    `https://api.themoviedb.org/3${requests.fetchTopRated.url}`
+  ).then((res) => res.json());
+
+  return {
+    props: {
+      trendingResults: trendingResults.results,
+      topRatedResults: topRatedResults.results,
+    },
+  };
 }

@@ -2,7 +2,6 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 function TV({ tv }) {
-  console.log(tv);
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
 
@@ -47,7 +46,9 @@ function TV({ tv }) {
             className="trailer-button"
             onClick={() =>
               router.push(
-                `/videos/${tv.id}?name=${tv.title || tv.original_name}`
+                `/videos/${tv.id}?type=${tv.type}&name=${
+                  tv.title || tv.original_name
+                }`
               )
             }
           >

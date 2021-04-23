@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 function Viewers() {
   return (
     <div className="mt-9 pt-[30px] pb-[26px] grid gap-6 grid-cols-1 md:grid-cols-5">

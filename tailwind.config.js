@@ -19,6 +19,9 @@ module.exports = {
       width: {
         initial: "initial",
       },
+      transformOrigin: {
+        "left-center": "left center",
+      },
     },
   },
   variants: {
@@ -34,5 +37,6 @@ module.exports = {
         "hover:before:text-black": "hbt",
       },
     }),
+    require("tailwind-scrollbar-hide"),
   ],
 };

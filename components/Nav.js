@@ -13,7 +13,10 @@ function Nav() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 h-[70px] bg-[#090b13] flex justify-between items-center px-9 tracking-[16px] z-10">
-      <div className="w-20 mt-1 max-h-[70px]">
+      <div
+        className="w-20 mt-1 max-h-[70px] cursor-pointer"
+        onClick={() => router.push("/", "", { scroll: false })}
+      >
         <Image
           src="https://raw.githubusercontent.com/CleverProgrammers/cp-disney-plus-clone/8d8e67a6e4069a67b43dd9031faac3c4d5dc77e0/public/images/logo.svg"
           width={150}
@@ -24,13 +27,13 @@ function Nav() {
 
       <div className="hidden items-center h-full justify-end relative mr-auto ml-6 md:flex">
         <div
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/", "", { scroll: false })}
           className="flex items-center px-3 cursor-pointer group"
         >
           <Image
             src="https://raw.githubusercontent.com/CleverProgrammers/cp-disney-plus-clone/8d8e67a6e4069a67b43dd9031faac3c4d5dc77e0/public/images/home-icon.svg"
-            width={25}
-            height={25}
+            width={20}
+            height={20}
           />
           <span className="nav-link">HOME</span>
         </div>
@@ -41,8 +44,8 @@ function Nav() {
         >
           <Image
             src="https://raw.githubusercontent.com/CleverProgrammers/cp-disney-plus-clone/8d8e67a6e4069a67b43dd9031faac3c4d5dc77e0/public/images/search-icon.svg"
-            width={25}
-            height={25}
+            width={20}
+            height={20}
           />
           <span className="nav-link">SEARCH</span>
         </div>
@@ -53,8 +56,8 @@ function Nav() {
         >
           <Image
             src="https://raw.githubusercontent.com/CleverProgrammers/cp-disney-plus-clone/8d8e67a6e4069a67b43dd9031faac3c4d5dc77e0/public/images/watchlist-icon.svg"
-            width={25}
-            height={25}
+            width={20}
+            height={20}
           />
           <span className="nav-link">WATCHLIST</span>
         </div>
@@ -65,8 +68,8 @@ function Nav() {
         >
           <Image
             src="https://raw.githubusercontent.com/CleverProgrammers/cp-disney-plus-clone/8d8e67a6e4069a67b43dd9031faac3c4d5dc77e0/public/images/original-icon.svg"
-            width={25}
-            height={25}
+            width={20}
+            height={20}
           />
           <span className="nav-link">ORIGINALS</span>
         </div>
@@ -77,8 +80,8 @@ function Nav() {
         >
           <Image
             src="https://raw.githubusercontent.com/CleverProgrammers/cp-disney-plus-clone/8d8e67a6e4069a67b43dd9031faac3c4d5dc77e0/public/images/movie-icon.svg"
-            width={25}
-            height={25}
+            width={20}
+            height={20}
           />
           <span className="nav-link">MOVIES</span>
         </div>
@@ -89,8 +92,8 @@ function Nav() {
         >
           <Image
             src="https://raw.githubusercontent.com/CleverProgrammers/cp-disney-plus-clone/8d8e67a6e4069a67b43dd9031faac3c4d5dc77e0/public/images/series-icon.svg"
-            width={25}
-            height={25}
+            width={20}
+            height={20}
           />
           <span className="nav-link">SERIES</span>
         </div>

@@ -1,9 +1,9 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 function Movie({ movie }) {
-  console.log(movie);
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
-  let comma = [];
+  const router = useRouter();
 
   return (
     <div className="relative min-height-calc overflow-hidden block top-[72px] padding-calc">
@@ -41,7 +41,14 @@ function Movie({ movie }) {
             <span>Play</span>
           </button>
 
-          <button className="trailer-button">
+          <button
+            className="trailer-button"
+            onClick={() =>
+              router.push(
+                `/videos/${movie.id}?name=${movie.title || movie.original_name}`
+              )
+            }
+          >
             <img
               src="https://disney-clone-d1e27.web.app/images/play-icon-white.svg"
               alt=""

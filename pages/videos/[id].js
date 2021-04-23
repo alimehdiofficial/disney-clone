@@ -4,9 +4,8 @@ import { useRouter } from "next/router";
 function Videos({ results }) {
   const router = useRouter();
 
-  console.log(results);
   return (
-    <div className="h-screen flex items-start flex-col justify-center pl-24 relative py-[72px]">
+    <div className="pl-24 relative py-36">
       <Head>
         <title>{router.query.name}</title>
       </Head>
@@ -16,7 +15,7 @@ function Videos({ results }) {
           {router.query.name}
         </span>
       </h2>
-      <div className="flex overflow-x-scroll">
+      <div className="flex overflow-x-scroll relative scrollbar-hide">
         {/* {results.slice(0, 3).map((result) => (
           <div key={result.id} className="mr-4">
             <iframe
@@ -46,6 +45,7 @@ function Videos({ results }) {
           </div>
         ))}
       </div>
+      <div className="absolute top-1/4 right-0 bg-gradient-to-l from-[#040714] h-96 w-1/12" />
     </div>
   );
 }
@@ -53,8 +53,12 @@ function Videos({ results }) {
 export default Videos;
 
 export async function getServerSideProps(context) {
+  const type = context.query.type;
+
   const videos = await fetch(
-    `https://api.themoviedb.org/3/tv/${context.query.id}/videos?api_key=${process.env.API_KEY}`
+    `https://api.themoviedb.org/3/${type ? "tv" : "movie"}/${
+      context.query.id
+    }/videos?api_key=${process.env.API_KEY}`
   ).then((res) => res.json());
 
   return {

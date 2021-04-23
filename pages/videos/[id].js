@@ -9,9 +9,9 @@ function Videos({ results }) {
       <Head>
         <title>{router.query.name}</title>
       </Head>
-      <h2 className="text-lg md:text-3xl mb-5">
+      <h2 className="text-lg md:text-3xl -mb-1.5 md:mb-5">
         Videos{" "}
-        <span className="text-lg md:text-xl text-[#a3a3a3] border-l border-[#a3a3a3] pl-[15px] ml-[9px]">
+        <span className="block md:inline text-lg md:text-xl text-[#a3a3a3] border-l border-[#a3a3a3] pl-[15px] md:ml-[9px]">
           {router.query.name}
         </span>
       </h2>
